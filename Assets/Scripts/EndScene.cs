@@ -12,11 +12,15 @@ public class EndScene : MonoBehaviour
     public AudioClip startClip;
     public AudioSource audioSource;
 
+    public GameObject endPanel;
+
 
     private void Start()
     {
         Time.timeScale = 1f;
         UpdateScore();
+        endPanel.SetActive(false);
+        StartCoroutine(ShowScore());
     }
 
     private void Update()
@@ -37,5 +41,11 @@ public class EndScene : MonoBehaviour
     private void ReturnToStartMenu()
     {
         SceneManager.LoadScene("StartMenu");
+    }
+
+    private IEnumerator ShowScore()
+    {
+        yield return new WaitForSecondsRealtime(1.5f);
+        endPanel.SetActive(true);
     }
 }

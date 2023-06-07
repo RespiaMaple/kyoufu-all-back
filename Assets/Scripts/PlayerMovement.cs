@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class PlayerMovement : MonoBehaviour
 {
     public float jumpForce = 10f; // 跳躍力度
     public float crouchScale = 0.5f; // 蹲下時的縮放比例
+
+    public AudioSource hitSource;
 
     public Transform groundDetect;
 
@@ -46,6 +49,7 @@ public class PlayerMovement : MonoBehaviour
     {
         isGrounded = false;
         rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
+        hitSource.Play();
     }
 
     private void Crouch()
