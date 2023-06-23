@@ -19,6 +19,8 @@ public class PlayerAnimation : MonoBehaviour
     void Update()
     {
         anim.SetBool("isJumping", !movement.isGrounded);
+        anim.SetBool("isCrouching", movement.isCrouching);
+
 
         if (videoPlayer.isPlaying)
         {

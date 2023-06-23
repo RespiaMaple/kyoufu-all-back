@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class TrapSpawner : MonoBehaviour
 {
-    public GameObject[] obstaclePrefabs;
+    public GameObject[] airborneObstaclePrefabs;
+    public GameObject[] groundObstaclePrefabs;
     public float maxSpeed = 8f;
     public float minSpeed = 10f;
     public float spawnInterval = 2f;  // 障礙物生成間隔
+    public Transform airSpawnPoint;  // 空中生成位置
 
     private float spawnTimer = 0f;
 
@@ -27,13 +29,33 @@ public class TrapSpawner : MonoBehaviour
 
     private void SpawnObstacle()
     {
-        int randomIndex = Random.Range(0, obstaclePrefabs.Length);
-        GameObject obstacle = Instantiate(obstaclePrefabs[randomIndex], transform.position, Quaternion.identity);
+        GameObject obstaclePrefab;
+        GameObject obstacle;
+
+        if (IsAirbornePosition())
+        {
+            // 在空中生成特定的障礙物
+            int randomIndex = Random.Range(0, airborneObstaclePrefabs.Length);
+            obstaclePrefab = airborneObstaclePrefabs[randomIndex];
+            obstacle = Instantiate(obstaclePrefab, airSpawnPoint.position, Quaternion.identity);
+        }
+        else
+        {
+            // 在地面生成障礙物
+            int randomIndex = Random.Range(0, groundObstaclePrefabs.Length);
+            obstaclePrefab = groundObstaclePrefabs[randomIndex];
+            obstacle = Instantiate(obstaclePrefab, transform.position, Quaternion.identity);
+        }
 
         // 設定障礙物的移動速度
         float randomSpeed = Random.Range(minSpeed, maxSpeed);
         Rigidbody2D obstacleRb = obstacle.GetComponent<Rigidbody2D>();
         obstacleRb.velocity = new Vector2(-randomSpeed, 0f);
 
+    }
+
+    private bool IsAirbornePosition()
+    {
+        return Random.value < 0.5f;
     }
 }

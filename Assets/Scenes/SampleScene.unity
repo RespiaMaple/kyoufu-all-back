@@ -785,7 +785,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 761762930}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.1281066, y: -0.46920148, z: -0.003795764}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1026,6 +1026,37 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &1122149869
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1122149870}
+  m_Layer: 0
+  m_Name: AirSpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1122149870
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1122149869}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 7.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1609765701}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1420144628
 GameObject:
   m_ObjectHideFlags: 0
@@ -1156,7 +1187,8 @@ Transform:
   m_LocalPosition: {x: 10, y: -4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1122149870}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1172,12 +1204,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a03d2935633852418bc59639b9ef842, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstaclePrefabs:
+  airborneObstaclePrefabs:
+  - {fileID: 8294843289363894385, guid: c4f3129617cec93449dd2455e53753e8, type: 3}
+  - {fileID: 1558273112283293467, guid: 55066d2e04fc0cd4e9bcf1d2114241ab, type: 3}
+  - {fileID: 2768718970962872202, guid: 9ab93dab4674ec645ae5ebc9419ae2cb, type: 3}
+  - {fileID: 7267524312997582095, guid: 2d7fcfa6b7a31fb48926c47081719be6, type: 3}
+  groundObstaclePrefabs:
   - {fileID: 413601109335125651, guid: 2547de5b7e68f6945abe538d8d12598f, type: 3}
   - {fileID: 4501704262461333694, guid: 4c2a2f536fb17244f914be323e727c4f, type: 3}
   maxSpeed: 8
   minSpeed: 10
   spawnInterval: 2
+  airSpawnPoint: {fileID: 1122149870}
 --- !u!1 &1688916353
 GameObject:
   m_ObjectHideFlags: 0
@@ -1308,8 +1346,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
+    oldSize: {x: 1.78, y: 1.17}
+    newSize: {x: 1.78, y: 1.17}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -1358,15 +1396,15 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 9.2, y: 0.77}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1833260936
@@ -1516,9 +1554,21 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7856300343606008145, guid: e890e320826e41c4895a35238b1e71ba, type: 3}
+      propertyPath: m_Size.x
+      value: 19.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7856300343606008145, guid: e890e320826e41c4895a35238b1e71ba, type: 3}
+      propertyPath: m_Size.y
+      value: 10.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7856300343606008145, guid: e890e320826e41c4895a35238b1e71ba, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 5e769574d7c737e41a706f6825af989b, type: 3}
+    - target: {fileID: 7856300343606008145, guid: e890e320826e41c4895a35238b1e71ba, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7856300343606008146, guid: e890e320826e41c4895a35238b1e71ba, type: 3}
       propertyPath: m_Size.x
       value: 1.5
