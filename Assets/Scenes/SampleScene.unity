@@ -1209,13 +1209,16 @@ MonoBehaviour:
   - {fileID: 1558273112283293467, guid: 55066d2e04fc0cd4e9bcf1d2114241ab, type: 3}
   - {fileID: 2768718970962872202, guid: 9ab93dab4674ec645ae5ebc9419ae2cb, type: 3}
   - {fileID: 7267524312997582095, guid: 2d7fcfa6b7a31fb48926c47081719be6, type: 3}
+  - {fileID: 3916167496978881797, guid: 711b2ad6c852f0143bdf92677c43dba6, type: 3}
   groundObstaclePrefabs:
   - {fileID: 413601109335125651, guid: 2547de5b7e68f6945abe538d8d12598f, type: 3}
   - {fileID: 4501704262461333694, guid: 4c2a2f536fb17244f914be323e727c4f, type: 3}
-  maxSpeed: 8
+  maxSpeed: 12
   minSpeed: 10
-  spawnInterval: 2
+  spawnInterval: 1.5
   airSpawnPoint: {fileID: 1122149870}
+  speedIncreaseAmount: 2
+  speedIncreaseInterval: 30
 --- !u!1 &1688916353
 GameObject:
   m_ObjectHideFlags: 0
