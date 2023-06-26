@@ -30,10 +30,6 @@ public class EndScene : MonoBehaviour
             audioSource.PlayOneShot(startClip);
             Invoke("ReturnToStartMenu", 0.5f);
         }
-        else if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            Application.Quit();
-        }
     }
 
     public void UpdateScore()

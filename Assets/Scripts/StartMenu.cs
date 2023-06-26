@@ -22,10 +22,6 @@ public class StartMenu : MonoBehaviour
             audioSource.PlayOneShot(startClip);
             Invoke("StartGame", 0.5f);
         }
-        else if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            Application.Quit();
-        }
     }
 
     private void StartGame()
