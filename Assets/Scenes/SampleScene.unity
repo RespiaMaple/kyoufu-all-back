@@ -368,7 +368,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 626c804d3a11d024ca49d9712f979ae5, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -623,7 +623,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 1, g: 1, b: 1, a: 0}
+  m_BackGroundColor: {r: 1, g: 0.85098046, b: 0.32156864, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -671,54 +671,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &520171814
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 520171816}
-  - component: {fileID: 520171815}
-  m_Layer: 0
-  m_Name: ShieldSpawner
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &520171815
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 520171814}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a626c5123bcfd344a808c0a293174f9d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shieldPrefab: {fileID: 4501704262461333694, guid: 4c2a2f536fb17244f914be323e727c4f, type: 3}
-  speed: 8
-  minSpawnInterval: 10
-  maxSpawnInterval: 15
---- !u!4 &520171816
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 520171814}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10, y: -4, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &742158129 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7856300343551437825, guid: e890e320826e41c4895a35238b1e71ba, type: 3}
@@ -760,14 +712,14 @@ VideoPlayer:
   m_TargetMaterialProperty: <noninit>
   m_RenderMode: 2
   m_AspectRatio: 2
-  m_DataSource: 0
+  m_DataSource: 1
   m_PlaybackSpeed: 1
   m_AudioOutputMode: 2
   m_TargetAudioSources:
   - {fileID: 0}
   m_DirectAudioVolumes:
-  - 0.375
-  m_Url: 
+  - 0.1
+  m_Url: https://RespiaMaple.github.io/Kyoufuu-WebVid/Bg.mp4
   m_EnabledAudioTracks: 01
   m_DirectAudioMutes: 00
   m_ControlledAudioTrackCount: 1
@@ -790,7 +742,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &761762933
 MonoBehaviour:
@@ -815,7 +767,7 @@ GameObject:
   - component: {fileID: 778137647}
   - component: {fileID: 778137648}
   m_Layer: 5
-  m_Name: Video Player
+  m_Name: GameOverVid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -838,7 +790,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0.00012207031, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!328 &778137648
@@ -849,7 +801,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 778137646}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 2acd85dbc49e2394889439b53dd94de0, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: 50f038a8ee6d061408943dae4d45d216, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
@@ -859,14 +811,14 @@ VideoPlayer:
   m_TargetMaterialProperty: <noninit>
   m_RenderMode: 2
   m_AspectRatio: 2
-  m_DataSource: 0
+  m_DataSource: 1
   m_PlaybackSpeed: 1
   m_AudioOutputMode: 2
   m_TargetAudioSources:
   - {fileID: 0}
   m_DirectAudioVolumes:
-  - 0.375
-  m_Url: 
+  - 0.1
+  m_Url: https://RespiaMaple.github.io/Kyoufuu-WebVid/GameOver.mp4
   m_EnabledAudioTracks: 01
   m_DirectAudioMutes: 00
   m_ControlledAudioTrackCount: 1
@@ -909,7 +861,7 @@ Transform:
   - {fileID: 4584876}
   - {fileID: 1420144632}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1117574123
 MonoBehaviour:
@@ -929,6 +881,7 @@ MonoBehaviour:
   isGameOver: 0
   hitClip: {fileID: 8300000, guid: 882dcefe015c8f242b9a261eaffd0868, type: 3}
   hitSource: {fileID: 1117574124}
+  backgroundVideoPlayer: {fileID: 761762931}
   playerMovement: {fileID: 0}
 --- !u!82 &1117574124
 AudioSource:
@@ -942,7 +895,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 882dcefe015c8f242b9a261eaffd0868, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.375
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1135,7 +1088,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_TargetDisplay: 0
 --- !u!224 &1420144632
 RectTransform:
@@ -1215,7 +1168,7 @@ MonoBehaviour:
   - {fileID: 4501704262461333694, guid: 4c2a2f536fb17244f914be323e727c4f, type: 3}
   maxSpeed: 12
   minSpeed: 10
-  spawnInterval: 1.5
+  spawnInterval: 1.3
   airSpawnPoint: {fileID: 1122149870}
   speedIncreaseAmount: 2
   speedIncreaseInterval: 30
@@ -1491,7 +1444,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &7856300343861117567
 PrefabInstance:

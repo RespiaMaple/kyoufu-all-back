@@ -25,10 +25,14 @@ public class EndScene : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space))
         {
             audioSource.PlayOneShot(startClip);
             Invoke("ReturnToStartMenu", 0.5f);
+        }
+        else if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
         }
     }
 

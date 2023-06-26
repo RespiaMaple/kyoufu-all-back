@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
+using UnityEngine.Video;
 
 public class GameManager : MonoBehaviour
 {
@@ -19,6 +20,8 @@ public class GameManager : MonoBehaviour
 
     public AudioClip hitClip;
     public AudioSource hitSource;
+
+    public VideoPlayer backgroundVideoPlayer;
 
     public PlayerMovement playerMovement;
 
@@ -63,11 +66,13 @@ public class GameManager : MonoBehaviour
 
     public static void GameOver()
     {
+        instance.backgroundVideoPlayer.Stop();
         //儲存分數
         PlayerPrefs.SetFloat("Score", instance.score);
         PlayerPrefs.Save();
 
         instance.hitSource.PlayOneShot(instance.hitClip);
+        
         instance.StartCoroutine(GameOverCoroutine());
         instance.StartCoroutine(EndCoroutine());
     }

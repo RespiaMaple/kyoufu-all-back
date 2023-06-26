@@ -24,7 +24,6 @@ public class StartMenu : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.Escape))
         {
-            Debug.Log("quit");
             Application.Quit();
         }
     }
